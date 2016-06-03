@@ -9,7 +9,6 @@
 #endif
 
 #define _time_t_included
-#pragma library time_t
 
 
 /*
@@ -44,11 +43,11 @@ stock gmtime(timestamp, &year = EPOCH_YR, &month = 1, &day = 1, &hour = 0, &minu
 	year = EPOCH_YR;
 	dayclock = timestamp % SECS_DAY;
 	day = timestamp / SECS_DAY;
-	
+
 	second = dayclock % 60;
 	minute = (dayclock % 3600) / 60;
 	hour = dayclock / 3600;
-	
+
 	while (day >= YEARSIZE(year)) {
 		day -= YEARSIZE(year);
 		year++;
